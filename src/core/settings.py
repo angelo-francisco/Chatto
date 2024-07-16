@@ -5,21 +5,23 @@ from decouple import AutoConfig
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
 # util functions
 def baseDirJoin(path: str):
     return os.path.join(BASE_DIR / path)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-config = AutoConfig(search_path=baseDirJoin('secret/.env'))
+config = AutoConfig(search_path=baseDirJoin("secret/.env"))
 SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -50,7 +52,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [baseDirJoin('templates')],
+        "DIRS": [baseDirJoin("templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -113,9 +115,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    baseDirJoin('assets'),
+    baseDirJoin("assets"),
 ]
-STATIC_ROOT = baseDirJoin('static')
+STATIC_ROOT = baseDirJoin("static")
 
 
 # Default primary key field type

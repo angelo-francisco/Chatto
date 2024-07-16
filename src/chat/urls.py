@@ -1,6 +1,4 @@
 from django.urls import path
 from .views import *
 
-urlpatterns = [
-   path("", chatHome, name='chat-home')
-]
+urlpatterns = [path("", chatHome, name="chat-home")]

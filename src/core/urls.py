@@ -5,6 +5,6 @@ from django.views.generic.base import RedirectView
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", RedirectView.as_view(url='/chat/')),
-    path("chat/", include('chat.urls')),
+    path("", RedirectView.as_view(url="/chat/")),
+    path("chat/", include("chat.urls")),
 ]
