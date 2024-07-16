@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.username {
+    font-weight: 700;
+}
+
+#messages {
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1; /* Para ocupar todo o espaço disponível entre o título e o formulário */
+    overflow-y: auto; /* Caso o conteúdo do chat seja maior que a altura disponível */
+    width: 80%;
+    max-height: calc(100vh - 210px); /* Altura máxima para evitar que o formulário fique escondido */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 110px; /* Espaçamento entre o título e o chat */
+    margin-left: auto; /* Centraliza horizontalmente */
+    margin-right: auto; /* Centraliza horizontalmente */
+}
+
+form {
+    width: 80%; /* Ajusta a largura do formulário para ser igual à largura do #messages */
+    position: fixed;
+    bottom: 20px; /* Distância do fundo */
+    left: 50%; /* Coloca o formulário no centro horizontalmente */
+    transform: translateX(-50%); /* Move o formulário de volta para a esquerda em 50% da largura */
+    background-color: #f0f0f0;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil na parte inferior */
+}
+
+#message {
+    width: 100%; /* Ocupa toda a largura do container pai (form) */
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+}
+
+.typewriter {
+    text-align: center;
+    margin-top: 50px; /* Espaçamento opcional para centralizar verticalmente */
+}
+
+.typewriter h1 {
+    overflow: hidden; /* Esconde o texto que será revelado gradualmente */
+    white-space: nowrap; /* Garante que o texto não quebre */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    letter-spacing: .15em; /* Espaçamento entre as letras */
+    border-right: .15em solid rgb(0, 0, 0); /* Efeito do cursor */
+    animation: typing 1s steps(10, end), blink-caret .75s step-end infinite; /* Animação */
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: rgb(0, 0, 0) }
+}
+
+#messages .message-card p {
+    word-wrap: break-word;
+}
+
+#messages .message-card {
+    font-size: 16px;
+    margin-top: 3px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    border: 1px solid rgba(0, 0, 0, 0.33);
+    border-radius: 5px;
+}
+
+#messages .message-card .message-header {
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

@@ -8,6 +8,50 @@
     <title>Chatto</title>
 </head>
 <body>
-    <h1>Chatto</h1>
+    <div class="typewriter">
+        <h1 id="title">Chatto</h1>
+    </div>
+    <p id="description">The random chat for random talks!</p>
+    <div id="messages">
+    </div>
+    <form id="form">
+        <input type="text" name="message" id="message">
+    </form>
+
+    <script>
+        let url = `ws://${window.location.host}/ws/socket-server/`
+        const chatSocket = new WebSocket(url)
+        chatSocket.onmessage = function(e){
+            let data = JSON.parse(e.data)
+            console.log('Data:', data)
+            if(data.type === 'chat'){
+                let date = new Date()
+                let messages = document.getElementById('messages')
+                let shouldScroll = messages.scrollTop + messages.clientHeight === messages.scrollHeight;
+                messages.insertAdjacentHTML('beforeend', `
+                    <div class="message-card">
+                        <div class="message-header">
+                            <p class="username">{{ request.session.username }}</p>
+                            <p>${date.getHours()}:${date.getMinutes()}</p>
+                        </div>
+                        <p>${data.message}</p>
+                    </div>
+                `)
+                if(shouldScroll){
+                    messages.scrollTop = messages.scrollHeight;
+                }
+            }
+        }
+
+        let form = window.document.getElementById('form')
+        form.addEventListener('submit', (e) => {
+            e.preventDefault()
+            let message = e.target.message.value
+            chatSocket.send(JSON.stringify({
+                'message': message
+            }))
+            form.reset()
+        })
+    </script>
 </body>
 </html>
