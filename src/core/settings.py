@@ -13,8 +13,8 @@ def baseDirJoin(path: str):
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-config = AutoConfig(search_path=baseDirJoin('src/secret/.env'))
-SECRET_KEY = config["SECRET_KEY"]
+config = AutoConfig(search_path=baseDirJoin('secret/.env'))
+SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -48,7 +48,7 @@ ROOT_URLCONF = "core.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [baseDirJoin('src/templates')],
+        "DIRS": [baseDirJoin('templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -70,7 +70,7 @@ WSGI_APPLICATION = "core.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "src/secret/database.sqlite3",
+        "NAME": BASE_DIR / "secret/database.sqlite3",
     }
 }
 
@@ -111,9 +111,9 @@ USE_TZ = True
 
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
-    baseDirJoin('src/assets'),
+    baseDirJoin('assets'),
 ]
-STATIC_ROOT = baseDirJoin('src/static')
+STATIC_ROOT = baseDirJoin('static')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
