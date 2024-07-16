@@ -12,6 +12,7 @@
         <h1 id="title">Chatto</h1>
     </div>
     <p id="description">The random chat for random talks!</p>
+    <p>Standard Room: {{ openin }}</p>
     <div id="messages">
     </div>
     <form id="form">
@@ -19,6 +20,11 @@
     </form>
 
     <script>
+        function scrollDown() {
+            window.scrollBy(0, 5); // Ajuste o valor (0, 5) para controlar a velocidade de rolagem
+            setTimeout(scrollDown, 10); // Ajuste o valor do timeout conforme necessário para a velocidade desejada
+        }
+
         let url = `ws://${window.location.host}/ws/socket-server/`
         const chatSocket = new WebSocket(url)
         chatSocket.onmessage = function(e){
@@ -27,7 +33,6 @@
             if(data.type === 'chat'){
                 let date = new Date()
                 let messages = document.getElementById('messages')
-                let shouldScroll = messages.scrollTop + messages.clientHeight === messages.scrollHeight;
                 messages.insertAdjacentHTML('beforeend', `
                     <div class="message-card">
                         <div class="message-header">
@@ -37,9 +42,7 @@
                         <p>${data.message}</p>
                     </div>
                 `)
-                if(shouldScroll){
-                    messages.scrollTop = messages.scrollHeight;
-                }
+                messages.scrollTop = messages.scrollHeight;
             }
         }
 
