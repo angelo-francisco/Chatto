@@ -1,14 +1,14 @@
 <div align="center" >
     <img src="imgs/chat.256x256.png" style="width:50px;" />
     <br>
-    <big><p><strong>Chatto</strong></p></big>
+    <h1><p><strong>Chatto</strong></p></>
     <div>
         <img src="imgs/git.png" style="width:15px;">
         <img src="imgs/python.png" style="width:15px;">
         <img src="imgs/django.png" style="width:15px;">
     </div>
 </div>
-<hr>
+
 A chat made to exchange realtime messages, using django, and websockets to create a realtime communication via http.
 <br>
 <br>
