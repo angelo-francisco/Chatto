@@ -31,11 +31,11 @@ h1 {
     flex: 1; /* Para ocupar todo o espaço disponível entre o título e o formulário */
     overflow-y: auto; /* Caso o conteúdo do chat seja maior que a altura disponível */
     width: 80%;
-    max-height: calc(100vh - 210px); /* Altura máxima para evitar que o formulário fique escondido */
+    max-height: calc(100vh - 300px); /* Altura máxima para evitar que o formulário fique escondido */
     border: 1px solid #ccc;
     padding: 10px;
     margin-top: 10px;
-    margin-bottom: 110px; /* Espaçamento entre o título e o chat */
+    margin-bottom: 100px; /* Espaçamento entre o título e o chat */
     margin-left: auto; /* Centraliza horizontalmente */
     margin-right: auto; /* Centraliza horizontalmente */
 }
