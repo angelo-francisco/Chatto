@@ -1,7 +1,7 @@
 <div align="center" >
     <img src="imgs/chat.256x256.png" style="width:50px;" />
     <br>
-    <span style="font-size: 30px;font-weight:700;">Chatto</span>
+    <p style="font-size: 30px;font-weight:700;">Chatto</p>
     <div>
         <img src="imgs/git.png" style="width:15px;">
         <img src="imgs/python.png" style="width:15px;">
@@ -13,7 +13,7 @@ A chat made to exchange realtime messages, using django, and websockets to creat
 <br>
 <br>
 <div align="center" >
-    <img src="imgs/pre1.png" >
+    <img src="imgs/pre1.png" style="width:300px;">
 </div>
 
 ### Tools 🛠️
