@@ -1,7 +1,7 @@
 <div align="center" >
     <img src="imgs/chat.256x256.png" style="width:50px;" />
     <br>
-    <p style="font-size: 30px;font-weight:700;">Chatto</p>
+    <big><p><strong>Chatto</strong></p></big>
     <div>
         <img src="imgs/git.png" style="width:15px;">
         <img src="imgs/python.png" style="width:15px;">
