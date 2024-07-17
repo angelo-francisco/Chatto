@@ -10,6 +10,11 @@
 </div>
 <hr>
 A chat made to exchange realtime messages, using django, and websockets to create a realtime communication via http.
+<br>
+<br>
+<div align="center" >
+    <img src="imgs/pre1.png" >
+</div>
 
 ### Tools 🛠️
 - Python
@@ -28,6 +33,9 @@ git clone https://github.com/angelo-francisco/Chatto.git
 # install the dependencies
 pip install -r requirements.txt
 
+# run, and be happy 😁
+cd src
+python manage.py runserver
 ```
 ### LICENSE 🔑
 Project license [Here](https://opensource.org/license/mit)
